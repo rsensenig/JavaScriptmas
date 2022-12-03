@@ -11,7 +11,7 @@ Use a template literal to construct the string.
 
 E.g.
 For breakfast, I only like croissants 🥐. For lunch, I love pasta 🍝, 
-and for supper I want usually want pizza 🍕.
+and for supper I usually want pizza 🍕.
 */
 
 const faveFoods = {
@@ -24,4 +24,22 @@ const faveFoods = {
 const { breakfast, lunch, supper } = faveFoods;
 
 // console.log(breakfast);
+
+// Identify your target, which should be the meals <section>.
+// Grab the section element
+
+let meals = document.getElementById("meals");
+
+// Create a new <p> element
+const newP = document.createElement('p');
+
+// Store the sentence describing my favorite foods for breakfast, lunch, and dinner in a variable
+let faveMeals = `For breakfast, I only like ${breakfast}. For lunch, I love ${lunch}, and for supper I usually want ${supper}.`
+
+// Create the text node with your faveMeals as an input
+// Append the text node to the <p> element
+newP.appendChild(document.createTextNode(faveMeals));
+
+// Add the <p> element to the meals <section>
+meals.appendChild(newP);
 
