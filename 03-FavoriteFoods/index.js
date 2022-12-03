@@ -15,7 +15,13 @@ and for supper I want usually want pizza 🍕.
 */
 
 const faveFoods = {
-    breakfast: '',
-    lunch: '',
-    supper: ''
+    breakfast: 'eggs 🍳',
+    lunch: 'a sandwich 🥪',
+    supper: 'ramen 🍜'
 }
+
+// destructure the object faveFoods
+const { breakfast, lunch, supper } = faveFoods;
+
+// console.log(breakfast);
+
