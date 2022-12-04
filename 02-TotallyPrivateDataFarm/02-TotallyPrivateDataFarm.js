@@ -22,8 +22,19 @@ array should look like this when you're done:
 }
 
 Read about toDateString() for info on formatting a readable date. 
-
 */
+// flexing on destructuring
+function transformDataDestructured(data){
+    return data.map(({name:{first, last}, dob:{date}}) => {
+        // convert date string from userData to Date object
+        const birthday = new Date(date);
+        return {
+            fullName: first + ' ' + last,
+            birthday: birthday.toDateString()
+        };
+    });
+}
+
 function transformData(data){
     return data.map((person) => {
         // convert date string from userData to Date object
