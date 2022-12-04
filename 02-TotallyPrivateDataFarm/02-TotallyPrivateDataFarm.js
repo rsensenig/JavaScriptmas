@@ -25,7 +25,10 @@ Read about toDateString() for info on formatting a readable date.
 
 */
 function transformData(data){
-
+    const fullName = data.map((person) => {
+        return person.name.first + ' ' + person.name.last
+    });
+    return fullName;
 }
 
 console.log(transformData(userData));
