@@ -25,10 +25,14 @@ Read about toDateString() for info on formatting a readable date.
 
 */
 function transformData(data){
-    const fullName = data.map((person) => {
-        return person.name.first + ' ' + person.name.last
+    return data.map((person) => {
+        // convert date string from userData to Date object
+        const birthday = new Date(person.dob.date);
+        return {
+            fullName: person.name.first + ' ' + person.name.last,
+            birthday: birthday.toDateString()
+        };
     });
-    return fullName;
 }
 
 console.log(transformData(userData));
