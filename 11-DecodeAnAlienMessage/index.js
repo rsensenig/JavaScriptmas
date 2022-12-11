@@ -23,16 +23,18 @@ Example input: !htrae ot emocleW
 Example output: Welcome to earth!
 */  
 
-function reverseString(str){
+// METHOD 1: reverse the string manually through a for loop, starting at the beginning of the string
+// function reverseString(str){
     
-    let reversedStr = "";
+//     let reversedStr = "";
     
-    for(let i=0; i<str.length; i++) {
-        reversedStr = str[i] + reversedStr;
-    }
-    return reversedStr;
-}
+//     for(let i=0; i<str.length; i++) {
+//         reversedStr = str[i] + reversedStr;
+//     }
+//     return reversedStr;
+// }
 
+// METHOD 2: reverse the the string manually through a for loop, starting at the end of the string
 // function reverseString(str){
     
 //     let reversedStr = "";
@@ -42,6 +44,14 @@ function reverseString(str){
 //     }
 //     return reversedStr;
 // }
+
+// METHOD 3: use string methods to reverse the string
+function reverseString(str){
+    // the split method splits the string object into an array of substrings
+    // the reverse method reverses the array in place
+    // the join method joins all the elements of the array into a string
+    return str.split("").reverse().join("");
+}
 
 console.log(reverseString("!htrae ot emocleW"));
 
@@ -53,13 +63,19 @@ You can use reuse your reverseString() function, use string methods, or
 reverse the strings manually. 
 */ 
 
-let newArr = [];
+// METHOD 1: reverse the strings in the array manually using a for loop and the reverseString() function
+// let newArr = [];
 
+// function reverseStringsInArray(arr){
+//     for(let i=0; i<arr.length; i++) {
+//         newArr.push(reverseString(arr[i]));
+//     }
+//     return newArr;
+// }
+
+// METHOD 2: reverse the strings in the array using the map function and the reverseString() function
 function reverseStringsInArray(arr){
-    for(let i=0; i<arr.length; i++) {
-        newArr.push(reverseString(arr[i]));
-    }
-    return newArr;
+    return arr.map(str => reverseString(str));
 }
 
 console.log(reverseString(title));
