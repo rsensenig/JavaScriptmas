@@ -37,13 +37,11 @@ Example output: "elephant"
 */ 
 
 function emojifyWord(word){
-    // convert word to lowercase
-    word = word.toLowerCase();
-
     // if the word starts and ends with a colon
     if(word.startsWith(":") && word.endsWith(":")) {
+        // make sure the word is in lower case
         // then remove the colons
-        word = word.slice(1, -1);
+        word = word.toLowerCase().slice(1, -1);
 
         let value = emojis[word];
 
@@ -56,8 +54,6 @@ function emojifyWord(word){
         return word;
     }
 };
-
-console.log(emojifyWord(":heart:"));
 
 /* 2. Write a function to find any emoji shortcodes in a phrase.
 Your function should map over each word in the phrase, emojify any word
@@ -72,14 +68,17 @@ Example output: "I 💜 my elephant"
 */ 
 
 function emojifyPhrase(phrase){
-    return;
+    // split the phrase into an array of substrings
+    // map over each word in the array
+    // return all words of the array into a string
+    return phrase.split(" ").map(emojifyWord).join(" ");
 }
 
 
 
-// console.log(emojifyWord(":heart:"));
-// console.log(emojifyWord(":flower:"));
-// console.log(emojifyWord("elephant"));
+console.log(emojifyWord(":heart:"));
+console.log(emojifyWord(":flower:"));
+console.log(emojifyWord("elephant"));
 
-// console.log(emojifyPhrase("I :heart: my :cat:"));
-// console.log(emojifyPhrase("I :heart: my :elephant:"));
+console.log(emojifyPhrase("I :heart: my :cat:"));
+console.log(emojifyPhrase("I :heart: my :elephant:"));
