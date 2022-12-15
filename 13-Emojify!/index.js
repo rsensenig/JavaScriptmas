@@ -45,24 +45,19 @@ function emojifyWord(word){
         // then remove the colons
         word = word.slice(1, -1);
 
-        // look up the word in the emoji object
-        emojis.forEach(emoji => {
-            // if the word is in the emoji object
-            if(emoji === "smile") {
-                // return the corresponding emoji
-                return "😊";
-            } else {
-                // else return the original word
-                return word;
-            }
-        });
+        let value = emojis[word];
 
+        if(value !== undefined) {
+            return value;
+        } else {
+            return word;
+        }
+    } else {
+        return word;
     }
+};
 
-    return word;
-}
-
-console.log(emojifyWord(":smile:"));
+console.log(emojifyWord(":heart:"));
 
 /* 2. Write a function to find any emoji shortcodes in a phrase.
 Your function should map over each word in the phrase, emojify any word
