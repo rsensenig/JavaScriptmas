@@ -24,7 +24,7 @@ function getFreePodcasts(data){
     // filter for free podcasts and save in a variable
     let freePodcasts = data.filter(podcast => podcast.paid === false);
 
-    // return the title, rating, and paid status of the free podcasts
+    // return the title, rating, and paid status of the free podcasts using the map method
     return freePodcasts.map(({title, rating, paid}) => ({title, rating, paid}));
 }
 
