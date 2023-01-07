@@ -20,26 +20,31 @@ Your function's output should look something like this:
  */
 
 function awardBonuses(){
+    // create a variable to store the list of bonuses in an array
+    let bonusList = [];
+    
     // loop through numbers 1 to 100
     for(let i = 1; i <= 100; i++) {
         // if the number is divisible by 3
         if(i % 3 === 0) {
-            // print the number and "Vacation!"
-            console.log(`${i} - Vacation!`);
+            // add the number and "Vacation!" to the list
+            bonusList.push(`${i} - Vacation!`);
         // else if the number is divisible by 5
         } else if(i % 5 === 0) {
-            //print the number and "$100,000 bonus!"
-            console.log(`${i} - $100,000 bonus!`);
+            //add the number and "$100,000 bonus!" to the list
+            bonusList.push(`${i} - $100,000 bonus!`);
         // else if the number is divisible by 3 and 5
         } else if(i % 3 === 0 && i % 5 === 0) {
-            // print the number and "JACKPOT! 1 Million and a Yacht!"
-            console.log(`${i} - JACKPOT! 1 Million and a Yacht!`);
+            // add the number and "JACKPOT! 1 Million and a Yacht!" to the list
+            bonusList.push(`${i} - JACKPOT! 1 Million and a Yacht!`);
         // else
         } else {
-            // print the number and ":("
-            console.log(`${i} - :(`);
+            // add the number and ":(" to the list
+            bonusList.push(`${i} - :(`);
         }
     };
+
+    return bonusList;
 };
 
-awardBonuses();
+console.log(awardBonuses());
